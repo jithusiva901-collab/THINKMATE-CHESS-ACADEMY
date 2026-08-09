@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKMATE CHESS ACADEMY ♕</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+    <link rel="stylesheet" href="hme.css">
+    
+    <!-- Chess Engine & Board Libraries (Required for playable chess) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+    <script src="auth-check.js"></script>
+</head>
+<body>
+
+<header>
+    <a href="home.html" class="logo" style="text-decoration: none; color: inherit;">
+        THINKMATE CHESS ACADEMY ♕
+    </a>
+    
+    <div class="header-right">
+        <a href="messages.html" class="messages-icon-btn" title="Messages Inbox">
+            💬 <span class="unread-badge" id="unreadBadge">0</span>
+        </a>
+        <div class="menu-icon" id="menuToggle">&#9776;</div>
+        <nav id="navMenu">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="cources.html">Courses</a>
+            <a href="contact.html">Contact</a>
+            <a href="review.html">Reviews</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <p>Every Grandmaster Was Once a Beginner. Unlock your child’s potential with expert chess coaching that builds strategic thinking, concentration, and discipline.</p>
+        
+        <!-- Hero Buttons with Free Trial Play Option -->
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+            <button onclick="openChessTrialModal()" class="btn" style="background: #d4af37; color: #111; font-weight: bold;">
+                🎮 Play Free Trial Game
+            </button>
+            <a href="register.html" class="btn">Join Academy</a>
+        </div>
+    </div>
+</section>
+
+<!-- Free Trial Interactive Playable Chessboard Modal -->
+<div id="chessTrialModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center;">
+    <div class="modal-content" style="background: #141923; border: 2px solid #d4af37; padding: 20px; border-radius: 12px; max-width: 300px; width: 90%; color: #fff; text-align: center; position: relative;">
+        <span onclick="closeChessTrialModal()" style="position: absolute; right: 15px; top: 10px; font-size: 1.5rem; cursor: pointer; color: #d4af37;">&times;</span>
+        
+        <h3 style="color: #d4af37; margin-bottom: 8px;">Free Trial vs Bot</h3>
+        <p style="font-size: 0.8rem; color: #ccc; margin-bottom: 12px;" id="gameStatus">Your move! You play White.</p>
+
+        <!-- Compact Playable Board Container -->
+        <div id="myBoard" style="width: 100%; max-width: 250px; margin: 0 auto;"></div>
+
+        <div style="margin-top: 15px; display: flex; gap: 8px; justify-content: center;">
+            <button onclick="resetChessTrial()" class="btn" style="padding: 6px 12px; font-size: 0.8rem; background: #444; color: #fff;">Reset</button>
+            <a href="register.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem; text-decoration: none; background: #d4af37; color: #111;">Enroll Now</a>
+        </div>
+    </div>
+</div>
+
+<script src="chat-widget.js"></script>
+<script src="home.js"></script>
+</body>
+</html>

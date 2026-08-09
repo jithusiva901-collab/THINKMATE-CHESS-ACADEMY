@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THINKMATE CHESS ACADEMY ♕</title>
+ <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+<link rel="stylesheet" href="style.css">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
+    <nav>
+      <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="cources.html">Courses</a>
+        <a href="register.html">Register</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Every Grandmaster Was Once a Beginner.
+Unlock your child’s potential with expert chess coaching that builds strategic thinking, confidence, concentration, and discipline.</h1>
+        <p>Professional Chess Coaching For All Levels</p>
+        <a href="register.html" class="btn">Join Academy</a>
+    </div> 
+</section>
+
+ <section id="about" class="about">
+    <h2>About Our Academy</h2>
+    <p>
+        We provide world-class chess training for beginners,
+        intermediate, and advanced players. Our expert coaches
+        help students develop strategic thinking and tournament skills.
+    </p> 
+</section>
+
+<section id="courses" class="courses">
+    <h2>Our Programs</h2>
+
+    <div class="course-grid">
+
+        <div class="card">
+            <h3>Beginner Course</h3>
+            <p>Learn rules, openings and tactics.</p>
+            <h4>₹2999</h4>
+        </div>
+
+        <div class="card">
+            <h3>Intermediate Course</h3>
+            <p>Advanced tactics and strategies.</p>
+            <h4>₹4999</h4>
+        </div>
+
+        <div class="card">
+            <h3>Advanced Course</h3>
+            <p>Tournament preparation and mastery.</p>
+            <h4>₹7999</h4>
+        </div>
+
+    </div>
+</section>
+
+ <section id="register" class="register">
+    <h2>Register Now</h2>
+
+    <form id="registrationForm">
+
+        <input type="text" id="name" placeholder="Student Name" required>
+
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <input type="tel" id="phone" placeholder="Mobile Number" required>
+
+        <select id="course">
+            <option value="2999">Beginner Course - ₹2999</option>
+            <option value="4999">Intermediate Course - ₹4999</option>
+            <option value="7999">Advanced Course - ₹7999</option>
+        </select>
+
+        <button type="button" onclick="payNow()">
+            Register & Pay
+        </button>
+
+    </form>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+
+    <p>📞 +91 9486707315</p>
+    <p>📧 reenasuresh@gmail.com</p>
+    <p>📍 kasalada, India</p>
+</section>
+
+<footer>
+    <p>© 2026 THINKMATE CHESS ACADEMY. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+
+
+
+</body>
+</html>

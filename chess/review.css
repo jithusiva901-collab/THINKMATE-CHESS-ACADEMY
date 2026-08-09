@@ -1,0 +1,343 @@
+/* ==========================================
+   1. GLOBAL & RESET STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9fa;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   2. HEADER & DROPDOWN NAVIGATION
+   ========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #333333;
+    position: sticky;
+    top: 0;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-icon {
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+    color: rgb(165, 144, 92);
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #333333;
+    flex-direction: column;
+    min-width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+nav.active {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: rgb(165, 144, 92);
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+/* ==========================================
+   3. REVIEW CARDS CONTAINER
+   ========================================== */
+.container {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+}
+
+.book-container {
+    padding: 25px;
+    width: 320px;
+    border-radius: 12px;
+    background: rgb(165, 144, 92);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+        box-shadow: 0 10px 25px rgb(0, 0, 0);
+
+}
+
+.book-container h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+
+
+}
+
+.book-container h5 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.book-container p {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 15px;
+    word-break: break-word;
+
+}
+
+.book-container button {
+    background-color: rgb(165, 144, 92);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+    box-shadow: 0 10px 25px rgb(104, 101, 101);
+
+}
+
+.book-container button:hover {
+    background-color: #cc0000;
+}
+
+/* ==========================================
+   4. FLOATING "+" BUTTON
+   ========================================== */
+.add-button {
+    background-color: rgb(165, 144, 92);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px black;
+    z-index: 99;
+    transition: transform 0.2s ease;
+}
+
+.add-button:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   5. OVERLAY & MODAL POPUP
+   ========================================== */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.popupbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    width: 90%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color:rgb(165, 144, 92);
+   box-shadow: 0 4px 10px rgb(43, 44, 43);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.popupbox h3 {
+    color: #fffcfc;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#book-title-input{
+    width: 93%;
+   box-shadow: 0 10px 25px rgb(75, 74, 74);
+
+}
+
+.popupbox form {
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.popupbox input,
+.popupbox textarea {
+    background: #f9f9f9;
+    color: #333;
+    border-radius: 6px;
+    width: 93%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgb(75, 74, 74);
+
+}
+
+.popupbox textarea {
+    height: 100px;
+    resize: none;
+    box-shadow: 0 10px 25px rgb(75, 74, 74);
+    margin-top: 5px;
+
+}
+
+.popupbox button {
+    background: white;
+    color: #626161;
+    border-radius: 6px;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 7px;
+    margin-bottom: 10px;
+     box-shadow: 0 10px 25px rgb(75, 74, 74);
+}
+
+.popupbox #cancel-popup {
+    background: #e0e0e0;
+    color:#626161;
+}
+
+/* ==========================================
+   6. TOAST NOTIFICATION STYLES
+   ========================================== */
+.toast {
+    visibility: hidden;
+    min-width: 260px;
+    background-color: rgb(165, 144, 92); /* Theme color */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 14px 22px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: bold;
+   box-shadow: 0 4px 10px black;
+    opacity: 0;
+    transition: opacity 0.4s ease, bottom 0.4s ease, visibility 0.4s;
+}
+
+/* Active State triggered by JS */
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}
+/* Container alignment */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Message Icon Wrapper */
+.messages-icon-btn {
+    position: relative;
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+/* Badge Displayed directly ON the icon */
+.unread-badge {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background-color: #e63946;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    height: 18px;
+    min-width: 18px;
+    line-height: 18px;
+    padding: 0 4px;
+    border-radius: 50%;
+    display: none; /* Controlled by JavaScript */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid #333333;
+}

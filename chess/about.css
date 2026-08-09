@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9fa;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Dropdown */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #333333;
+    position: sticky;
+    top: 0;
+    border-radius: 10px;
+    opacity: 95%;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-icon {
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+    color: rgb(165, 144, 92);
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 8%;
+    background: #333333;
+    flex-direction: column;
+    min-width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+nav.active {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: rgb(165, 144, 92);
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+.about {
+    min-height: 100vh;
+    background: #f8f9fa;
+    text-align: center;
+    padding: 40px 10%;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 38px;
+    color: black;
+}
+
+.tagline {
+    font-size: 22px;
+    color: rgb(165, 144, 92);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+/* Vertical Stack Container */
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.card-1, .card-2, .card-3, .card-4 {
+    background: #ffffff;
+    border: 5px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+    color: black;
+   
+}
+
+.card-1 {
+    text-align: center;
+}
+
+/* Side-by-Side Layout for Cards 2, 3, 4 */
+.card-2, .card-3, .card-4 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    text-align: left;
+}
+
+.card-1:hover,
+.card-2:hover,
+.card-3:hover,
+.card-4:hover {
+    border-color: rgb(165, 144, 92);
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.662);
+}
+
+/* Side Image 300px x 200px */
+.side-img {
+    width: 300px;
+    height: 200px;
+    min-width: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.side-img:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.card-content {
+    flex: 1;
+}
+
+h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+blockquote {
+    font-style: italic;
+    color: rgb(165, 144, 92);
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Fullscreen Overlay Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+}
+
+/* Responsive view for mobile */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    .card-2, .card-3, .card-4 {
+        flex-direction: column;
+        text-align: center;
+    }
+    .side-img {
+        width: 100%;
+        min-width: unset;
+        height: 200px;
+    }
+}
+/* Lightbox Modal Overlay */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Maximum Width & Height for Enlarged Image */
+.modal-content {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close-btn:hover {
+    color: rgb(165, 144, 92);
+}
+
+/* Smooth Open Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Bottom-Right Chat Box Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+}
+
+.chat-toggle-btn {
+    background-color: rgb(165, 144, 92);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.05);
+    background-color: rgb(140, 120, 72);
+}
+
+.chat-popup {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 310px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.chat-popup.active {
+    display: flex;
+}
+
+.chat-header {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.chat-close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-body input,
+.chat-body textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.chat-body input:focus,
+.chat-body textarea:focus {
+    border-color: rgb(165, 144, 92);
+}
+
+.widget-send-btn {
+    background-color: rgb(165, 144, 92);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.widget-send-btn:hover {
+    background-color: rgb(140, 120, 72);
+}
+/* Container alignment */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Message Icon Wrapper */
+.messages-icon-btn {
+    position: relative;
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+/* Badge Displayed directly ON the icon */
+.unread-badge {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background-color: #e63946;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    height: 18px;
+    min-width: 18px;
+    line-height: 18px;
+    padding: 0 4px;
+    border-radius: 50%;
+    display: none; /* Controlled by JavaScript */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid #333333;
+}

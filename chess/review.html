@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKMATE CHESS ACADEMY ♕</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+    <link rel="stylesheet" href="review.css">
+    <script src="auth-check.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
+    <div class="header-right">
+        <!-- Messages Inbox Icon with Notification Badge -->
+        <a href="messages.html" class="messages-icon-btn" title="Messages Inbox">
+            💬
+            <span class="unread-badge" id="unreadBadge">0</span>
+        </a>
+   <div class="nav-container">
+        <div class="menu-icon" id="menuToggle">&#9776;</div>
+
+        <!-- Navigation items inside icon dropdown -->
+        <nav id="navMenu">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="cources.html">Courses</a>
+        <a href="register.html">Register</a>
+        <a href="contact.html">Contact</a>
+        <a href="review.html">reviews</a>
+        <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+</header>
+
+<!-- Dynamic Review Cards Container -->
+<div class="container"></div>
+
+<!-- Overlay & Modal Popup Box -->
+<div class="overlay"></div>
+<button onclick="show()" class="add-button" id="add-popup-button">+</button>
+
+<div class="popupbox">
+    <h3>STUDENTS REVIEW</h3>
+    <form>
+        <input type="text" placeholder="Enter Your Name" id="book-title-input">
+        <textarea placeholder="Enter Your Review" id="book-description-input"></textarea>
+        <button id="add-book">Add</button>
+        <button id="cancel-popup">Cancel</button>
+    </form>
+</div>
+
+<!-- Toast Notification Element -->
+<div id="toast-notification" class="toast"></div>
+
+<script src="review.js"></script>
+</body>
+</html>

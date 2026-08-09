@@ -1,0 +1,387 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:cursive;
+}
+
+body{
+    background:white;
+    color:black;
+  font-size: 18px;
+  transition: color 0.3s ease;
+                
+
+}
+p:hover {
+  cursor: pointer; 
+    zoom: 1.01;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #111;
+    position: relative;
+}
+
+/* Container relative to the icon */
+.menu-container {
+    position: relative;
+}
+
+/* Icon Styling */
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+}
+
+/* Dropdown Nav Menu */
+nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    flex-direction: column;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Active class toggled via JavaScript */
+nav.active {
+    display: flex;
+}
+
+nav a {
+    padding: 12px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.2s ease;
+}
+
+nav a:last-child {
+    border-bottom: none;
+}
+
+nav a:hover {
+    background-color: rgb(165, 144, 92);
+}header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #111;
+    position: relative;
+}
+
+/* Container relative to the icon */
+.menu-container {
+    position: relative;
+}
+
+/* Icon Styling */
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+}
+
+/* Dropdown Nav Menu */
+nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    flex-direction: column;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Active class toggled via JavaScript */
+nav.active {
+    display: flex;
+}
+
+nav a {
+    padding: 12px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.2s ease;
+}
+
+nav a:last-child {
+    border-bottom: none;
+}
+
+nav a:hover {
+    background-color: rgb(165, 144, 92);
+}
+.hero{
+    height:100vh;
+    background:url('hme\ walp.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 5px;
+    
+    
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.7);
+    padding:40px;
+    border-radius:10px;
+    width: 300px;
+    height: 280px;
+    margin-left: 63%;
+    margin-top: 20px;
+}
+
+.hero p{
+    font-size:55px;
+    color: white;
+    
+
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:20px;
+}
+
+.btn{
+    display:inline-block;
+    background:rgb(165, 144, 92);
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    margin-top: 20px;
+      font-size: 18px;
+  transition: color 0.3s ease;
+}
+.btn:hover {
+  cursor: pointer; 
+    zoom: 1.05;
+}
+
+section{
+    padding:80px 10%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:35px;
+    padding-bottom: 50px;
+    border-radius:10px;
+    text-align:center;
+    height: 200px;;
+}
+
+
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+form input,
+form select{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:5px;
+}
+
+form button{
+    width:100%;
+    padding:15px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:10px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+
+
+
+}
+
+
+
+
+.about{
+    height:100vh;
+    background:url('abt\ wp\ 4.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 5px;
+}
+
+ 
+
+.courses{
+    height:100vh;
+    background:url('abt\ wp\ 4.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 5px;
+}
+
+.courses h2{
+    color:black;
+}
+.card{
+    background:url('abt\ wp\ 4.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 250px;
+}
+.card h4 {
+    padding-top: 1px;
+}
+.card h5{
+padding: 10px;
+}
+.offer{
+    padding:35px;
+    padding-bottom: 50px;
+    border-radius:10px;
+    text-align:center;
+    height: 200px;;
+}
+.offer{
+    background:url('abt\ wp\ 4.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 10px;
+    margin-top: 20px;
+ 
+}
+.card{
+         font-size: 18px;
+  transition: color 0.3s ease;
+  color: black;
+}
+.card :hover {
+  cursor: pointer; 
+  color: rgb(165, 144, 92); 
+}
+.register{
+    height:100vh;
+    background:url('hme\ walp.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 5px;
+}
+#registrationForm input {
+    margin-left: 430px;
+    width: 300px;
+
+}
+#registrationForm form {
+    margin-left: 300px;
+
+}
+#registrationForm select{
+    margin-left: 430px;
+    width: 328px;
+
+}
+.register h2{
+        margin-left: 580px;
+        margin-top: -10px;
+        margin-bottom: 40px;
+
+
+}
+#registrationForm  button{
+    background:rgb(165, 144, 92);
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    margin-top: 20px;
+    width: 330px;
+    margin-left: 430px;
+
+
+}
+
+
+
+
+

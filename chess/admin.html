@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKMATE CHESS ACADEMY ♕ - Admin Dashboard</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">
+            <h2>THINKMATE ♕</h2>
+            <span>ADMIN DASHBOARD</span>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-btn active" data-target="approvalsSection">
+                <span class="icon">📋</span> Registration Approvals
+                <span class="badge" id="pendingBadge">0</span>
+            </button>
+            <button class="nav-btn" data-target="messagesSection">
+                <span class="icon">💬</span> Support Messages
+                <span class="badge" id="messagesBadge">0</span>
+            </button>
+            <button class="nav-btn" data-target="studentsSection">
+                <span class="icon">🎓</span> Approved Students
+            </button>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="admin-user-info">
+                <span class="icon">👤</span>
+                <span id="activeAdminDisplay">Admin</span>
+            </div>
+            <button id="adminLogoutBtn" class="logout-btn">Logout 🚪</button>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+        <!-- Top Metrics Header -->
+        <header class="dashboard-header">
+            <div class="stat-card">
+                <h3>Pending Approvals</h3>
+                <p id="statPendingCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Approved Students</h3>
+                <p id="statApprovedCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Unread Messages</h3>
+                <p id="statUnreadMessages">0</p>
+            </div>
+        </header>
+
+        <!-- SECTION 1: Student Approvals -->
+        <section id="approvalsSection" class="content-section active">
+            <div class="section-title">
+                <h2>Pending Student Approvals</h2>
+                <p>Approve or reject student course registrations</p>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Player ID</th>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Selected Course</th>
+                            <th>Mobile</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pendingRegistrationsTable">
+                        <!-- Dynamic Rows -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Support Messages & Replies -->
+        <section id="messagesSection" class="content-section">
+            <div class="section-title">
+                <h2>Messages Inbox & Replies</h2>
+                <p>View inquiries from students and send direct replies</p>
+            </div>
+            <div class="messages-container">
+                <div class="message-list" id="messageList">
+                    <!-- Dynamic Message Items -->
+                </div>
+                <div class="message-detail-card" id="messageDetailCard">
+                    <p class="select-prompt">Select a message from the list to view details and reply.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Approved Students List -->
+        <section id="studentsSection" class="content-section">
+            <div class="section-title">
+                <h2>Approved Students Directory</h2>
+                <p>List of all verified academy students</p>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Player ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="approvedStudentsTable">
+                        <!-- Dynamic Rows -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- SECTION 2: Support Messages & Live Chat Threads -->
+<section id="messagesSection" class="content-section">
+    <div class="section-title">
+        <h2>Student Messages & Chat Threads</h2>
+        <p>Select a student thread from the left to view messages and reply in real-time</p>
+    </div>
+
+    <div class="admin-chat-container">
+        <!-- Student Thread Selector -->
+        <aside class="admin-chat-sidebar">
+            <div class="sidebar-head">
+                <h3>Active Conversations</h3>
+            </div>
+            <div id="adminThreadsList" class="threads-list">
+                <!-- Dynamic Student Threads -->
+            </div>
+        </aside>
+
+        <!-- Dynamic Chat Conversation Window -->
+        <main class="admin-chat-window">
+            <div class="chat-header-bar" id="adminChatHeader">
+                <h3 id="selectedStudentTitle">Select a student thread to start chatting</h3>
+            </div>
+
+            <div class="chat-history-body" id="adminChatHistory">
+                <div class="empty-chat-prompt">
+                    <p>💬 Pick a conversation from the left sidebar to read messages.</p>
+                </div>
+            </div>
+
+            <form class="chat-reply-form" id="adminReplyForm">
+                <input type="text" id="adminReplyInput" placeholder="Type a reply to the student..." required disabled autocomplete="off">
+                <button type="submit" id="adminSendBtn" disabled>Send Reply ➔</button>
+            </form>
+        </main>
+    </div>
+</section>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
