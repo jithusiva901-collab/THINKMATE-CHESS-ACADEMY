@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKMATE CHESS ACADEMY ♕ - Contact Us</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+    
+    <!-- FontAwesome Icons for Visual Appeal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Existing Stylesheet & Scripts -->
+    <link rel="stylesheet" href="contact.css">
+    <script src="auth-check.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    
+
+<header>
+    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
+    <div class="header-right">
+        <!-- Messages Inbox Icon with Notification Badge -->
+        <a href="messages.html" class="messages-icon-btn" title="Messages Inbox">
+            💬
+            <span class="unread-badge" id="unreadBadge">0</span>
+        </a>
+    
+        <!-- Menu Icon Button -->
+        <div class="menu-icon" id="menuToggle">&#9776;</div>
+
+        <!-- Navigation Menu (Dropdown) -->
+        <nav id="navMenu">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="cources.html">Courses</a>
+            <a href="register.html">Register</a>
+            <a href="contact.html">Contact</a>
+            <a href="review.html">reviews</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </nav>
+    </div>
+</header>
+
+<main class="contact-section">
+    <!-- Hero Header -->
+    <div class="contact-hero text-center">
+        <h2>Contact Us</h2>
+        <p class="tagline">Have questions or want to enroll? Get in touch with us today!</p>
+    </div>
+
+    <!-- Quick Stat/Highlight Badges -->
+    <div class="contact-highlights">
+        <div class="highlight-item">
+            <i class="fa-solid fa-headset text-gold"></i>
+            <span>Instant Support</span>
+        </div>
+        <div class="highlight-item">
+            <i class="fa-solid fa-user-graduate text-gold"></i>
+            <span>Academy Admissions</span>
+        </div>
+        <div class="highlight-item">
+            <i class="fa-solid fa-clock text-gold"></i>
+            <span>Quick Response</span>
+        </div>
+    </div>
+
+    <div class="contact-container">
+        <!-- Contact Information Cards -->
+        <div class="contact-info">
+            <h3>Academy Details</h3>
+            
+            <div class="info-card">
+                <i class="fa-solid fa-location-dot info-icon"></i>
+                <div>
+                    <strong>Address</strong>
+                    <p>Thinkmate Chess Academy, Main Street, City</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-phone info-icon"></i>
+                <div>
+                    <strong>Phone</strong>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-envelope info-icon"></i>
+                <div>
+                    <strong>Email</strong>
+                    <p>info@thinkmatechess.com</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-business-time info-icon"></i>
+                <div>
+                    <strong>Hours</strong>
+                    <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Optional Interactive Map Container -->
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Thinkmate%20Chess%20Academy&t=&z=13&ie=UTF-8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="180" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="contact-form-card">
+            <h3>Send Us a Message</h3>
+            <p class="form-subtext">Fill out the details below and our team will get back to you shortly.</p>
+            
+            <form id="contactForm">
+                <div class="input-group">
+                    <label for="contactName"><i class="fa-solid fa-user"></i> Name</label>
+                    <input type="text" id="contactName" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="contactEmail"><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" id="contactEmail" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="contactPhone"><i class="fa-solid fa-phone"></i> Phone</label>
+                    <input type="tel" id="contactPhone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <label for="contactMessage"><i class="fa-solid fa-comment-dots"></i> Message</label>
+                    <textarea id="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 THINKMATE CHESS ACADEMY. All Rights Reserved.</p>
+</footer>
+
+<script src="contact.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

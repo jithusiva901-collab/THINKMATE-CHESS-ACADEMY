@@ -1,4 +1,10 @@
 /* Individual Performance Tracker Styling */
+*{
+       font-family: Arial, Helvetica, sans-serif !important;
+
+}
+
+
 .perf-tracker {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid #d4af37;

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Thinkmate Chess Academy</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+  <header>
+    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
+      <div class="header-right">
+        <!-- Messages Inbox Icon with Notification Badge -->
+        <a href="messages.html" class="messages-icon-btn" title="Messages Inbox">
+            💬
+            <span class="unread-badge" id="unreadBadge">0</span>
+        </a>
+    
+   <!-- Menu Icon Button -->
+    <div class="menu-icon" id="menuToggle">&#9776;</div>
+
+    <!-- Navigation Menu (Dropdown) -->
+    <nav id="navMenu">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="cources.html">Courses</a>
+        <a href="register.html">Register</a>
+        <a href="contact.html">Contact</a>
+        <a href="review.html">reviews</a>
+        <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+</header>
+
+    <!-- Lightbox Modal Overlay for Enlarged Image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="enlargedImg">
+    </div>
+
+    <!-- Plain Vertical About Section -->
+    <section class="about">
+        <h2>About Thinkmate Chess Academy</h2>
+        <p class="tagline">“More than chess—we build confident thinkers and future champions.” ♟️</p>
+
+        <div class="vertical-container">
+            <!-- Card 1: Why Choose Us -->
+            <div class="card-1">
+                <h3>Why Choose Thinkmate?</h3>
+                <p>At Thinkmate Chess Academy, our goal extends far beyond the chessboard. We build critical thinking, patience, concentration, and a champion’s mindset in every student—whether you are a beginner or an aspiring competitive player.</p>
+            </div>
+
+            <!-- Card 2: Meet Your Coach -->
+            <div class="card-2">
+                <img src="abt img 1.jpeg" class="side-img" onclick="openModal(this)">
+                <div class="card-content">
+                    <h3>Meet Your Coach</h3>
+                    <p><strong>Coach Reena Suresh</strong> is a passionate chess coach dedicated to helping students unlock their full potential through strategic thinking and disciplined practice.</p>
+                    <blockquote>“Every great chess player starts with a single move. Let’s make yours count.”</blockquote>
+                </div>
+            </div>
+
+            <!-- Card 3: Champion's Journey -->
+            <div class="card-3">
+                <img src="abt img 2.jpeg" class="side-img" onclick="openModal(this)">
+                <div class="card-content">
+                    <h3>A Champion’s Journey</h3>
+                    <p>Coach Reena Suresh’s chess journey began at a young age as a <strong>District-Level Chess Champion</strong>. Her early achievements reflect the dedication, discipline, and passion that inspire her coaching today.</p>
+                </div>
+            </div>
+
+            <!-- Card 4: Community & Results -->
+            <div class="card-4">
+                <img src="abt img 3.jpeg" class="side-img" onclick="openModal(this)">
+                <div class="card-content">
+                    <h3>Shaping Tomorrow’s Champions</h3>
+                    <p>Coach Reena has voluntarily provided free chess coaching to Government School students, producing <strong>Zonal and District-level winners</strong>.</p>
+                    <blockquote>Every medal earned is a testament to hard work and excellence.</blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Thinkmate Chess Academy. All rights reserved.</p>
+    </footer>
+    <!-- Include on home.html, about.html, cources.html, contact.html, review.html, messages.html, etc. -->
+<script src="chat-widget.js"></script>
+
+    <script src="about.js"></script>
+    
+</body>
+</html>
+
+    <!-- JavaScript to handle click-to-enlarge -->
+ 

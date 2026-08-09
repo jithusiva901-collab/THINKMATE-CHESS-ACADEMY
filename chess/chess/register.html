@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKMATE CHESS ACADEMY ♕</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+<header>
+    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
+    <div class="header-right">
+        <!-- Messages Inbox Icon with Notification Badge -->
+        <a href="messages.html" class="messages-icon-btn" title="Messages Inbox">
+            💬
+            <span class="unread-badge" id="unreadBadge">0</span>
+        </a>
+    
+        <div class="nav-container">
+            <div class="menu-icon" id="menuToggle">&#9776;</div>
+
+            <nav id="navMenu">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="cources.html">Courses</a>
+                <a href="register.html">Register</a>
+                <a href="contact.html">Contact</a>
+                <a href="review.html">reviews</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section id="register" class="register">
+
+    <!-- Dynamic Container for Added Registration Cards -->
+    <div class="container" id="studentContainer"></div> 
+
+    <!-- Overlay Background -->
+    <div class="overlay"></div>
+    
+    <!-- Open Register Modal Button -->
+    <button onclick="showModal()" class="add-button" id="add-popup-button">REGISTER</button>
+
+    <!-- POPUP REGISTRATION FORM -->
+    <div class="popupbox">
+        <h2 style="text-align: center; margin-bottom: 15px; color: white;">Register Student ♕</h2>
+        <form id="registerForm">
+            <!-- Player ID Input -->
+            <div style="margin-bottom: 10px;">
+                <input type="text" id="studentPlayerId" placeholder="Player ID (e.g. TM-1001)" required style="width: 100%; padding: 10px; background: white; color:black; border: none; border-radius: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- Full Name Input -->
+            <div style="margin-bottom: 10px;">
+                <input type="text" id="studentName" placeholder="Full Name" required style="width: 100%; padding: 10px; background: white; color: black; border: 1px solid #d4af37; border-radius: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- Email Address Input -->
+            <div style="margin-bottom: 10px;">
+                <input type="email" id="studentEmail" placeholder="Email Address" required style="width: 100%; padding: 10px; background: #fcf9f9; color:black; border: 1px solid #d4af37; border-radius: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- Course Selection -->
+            <div style="margin-bottom: 10px;">
+                <select id="studentCourse" required style="width: 100%; padding: 10px; background: #f9f9f9; color: black; border: 1px solid #d4af37; border-radius: 5px; outline: none; box-sizing: border-box;">
+                    <option value="">-- Select Course --</option>
+                    <option value="Beginner Tactics - ₹2999">Beginner Tactics - ₹2999</option>
+                    <option value="Intermediate Strategy - ₹4999">Intermediate Strategy - ₹4999</option>
+                    <option value="Advanced Masterclass - ₹7999">Advanced Masterclass - ₹7999</option>
+                </select>
+            </div>
+
+            <!-- Mobile Number Input -->
+            <div style="margin-bottom: 10px;">
+                <input type="tel" id="studentMobile" placeholder="Mobile Number" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required style="width: 100%; padding: 10px; background: white; color: black; border: 1px solid #d4af37; border-radius: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- Create Password Input -->
+            <div style="margin-bottom: 15px;">
+                <input type="password" id="studentPassword" placeholder="Create Password" required style="width: 100%; padding: 10px; background:white; color: black; border: 1px solid #d4af37; border-radius: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 10px;">
+                <button type="submit" id="add-book" style="flex: 1; background: #f8f8f8; color: rgb(165, 144, 92); font-weight: bold; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Add Student</button>
+                <button type="button" id="cancel-popup" style="flex: 1; background: #c62828; color: #fff; font-weight: bold; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Cancel</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- PVP CHESS MATCH MODAL -->
+<div id="pvpChessModal" class="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center;">
+    <div style="background: #222; padding: 20px; border-radius: 12px; width: 90%; max-width: 480px; text-align: center; color: #fff; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <button id="closePvpModal" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer;">&times;</button>
+        <h2 style="color: #d4af37; margin-bottom: 10px; font-size: 20px;">THINKMATE CHESS ACADEMY ♕♕</h2>
+
+        <!-- Player Selection Header -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; text-align: left;">
+            <div>
+                <label style="font-size: 11px; color: #aaa; display: block;">Player 1 (White):</label>
+                <select id="whitePlayerSelect" style="width: 100%; padding: 6px; background: #333; color: #fff; border: 1px solid #d4af37; border-radius: 4px; font-size: 12px; outline: none;"></select>
+            </div>
+            <div>
+                <label style="font-size: 11px; color: #aaa; display: block;">Player 2 (Black):</label>
+                <select id="blackPlayerSelect" style="width: 100%; padding: 6px; background: #333; color: #fff; border: 1px solid #d4af37; border-radius: 4px; font-size: 12px; outline: none;"></select>
+            </div>
+        </div>
+
+        <p id="pvpGameStatus" style="font-size: 13px; color: #f7f5f0; margin-bottom: 10px; font-weight: bold;">Select both players to start match</p>
+
+        <!-- Board -->
+        <div id="pvpBoard" style="width: 100%; max-width: 380px; margin: 0 auto; border-radius: 6px; overflow: hidden;"></div>
+
+        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <button id="resetPvpBoardBtn" style="background: #444; color: #fff; border: none; padding: 8px 14px; border-radius: 5px; cursor: pointer; font-size: 13px;">Restart Game</button>
+            <button id="closePvpBtn" style="background: #d4af37; color: #000; border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 13px;">Close Match</button>
+        </div>
+    </div>
+</div>
+
+<!-- Dependencies -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+
+<script src="chat-widget.js"></script>
+<script src="payment.js"></script>
+<script src="register.js"></script>
+
+</body>
+</html>

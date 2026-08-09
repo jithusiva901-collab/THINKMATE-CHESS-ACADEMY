@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - THINKMATE CHESS ACADEMY ♕</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png" class="log">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="cources.html">Courses</a>
+            <a href="register.html">Register</a>
+            <a href="contact.html">Contact</a>
+            <a href="review.html">reviews</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </nav>
+    </div>
+</header>
+
+<main class="login-wrapper">
+    <div class="login-card">
+        <h2>ACADEMY LOGIN ♕</h2>
+        <p class="subtitle">Welcome back! Please log in to your account.</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+            </div>
+
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+
+        <p class="signup-link">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+</main>
+
+<div id="toast-notification" class="toast"></div>
+
+<script src="login.js"></script>
+</body>
+</html>

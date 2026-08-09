@@ -3,6 +3,7 @@
     padding: 0;
     font-family: cursive;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 body {
@@ -13,6 +14,13 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+        height:100vh;
+    background:url('home.png');
+    background-size:cover;
+    background-position:center;
+    justify-content:center;
+    text-align:center;
+    border-radius: 5px;
     
 }
 
@@ -176,7 +184,7 @@ nav a:hover {
 }
 .hero{
     height:100vh;
-    background:url('hme\ walp.png');
+    background:url('hme-walp.png');
     background-size:cover;
     background-position:center;
     justify-content:center;
@@ -311,7 +319,7 @@ footer{
 
 .about{
     height:100vh;
-    background:url('abt\ wp\ 4.png');
+    background:url('abt-wp-4.png');
     background-size:cover;
     background-position:center;
     justify-content:center;
@@ -323,7 +331,7 @@ footer{
 
 .courses{
     height:100vh;
-    background:url('abt\ wp\ 4.png');
+    background:url('abt-wp-4.png');
     background-size:cover;
     background-position:center;
     justify-content:center;
@@ -335,7 +343,7 @@ footer{
     color:black;
 }
 .card{
-    background:url('abt\ wp\ 4.png');
+    background:url('abt-wp-4.png');
     background-size:cover;
     background-position:center;
     justify-content:center;
@@ -358,7 +366,7 @@ padding: 10px;
     height: 200px;;
 }
 .offer{
-    background:url('abt\ wp\ 4.png');
+    background:url('abt-wp-4.png');
     background-size:cover;
     background-position:center;
     justify-content:center;
@@ -376,15 +384,7 @@ padding: 10px;
   cursor: pointer; 
   color: rgb(165, 144, 92); 
 }
-.register{
-    height:100vh;
-    background:url('hme\ walp.png');
-    background-size:cover;
-    background-position:center;
-    justify-content:center;
-    text-align:center;
-    border-radius: 5px;
-}
+
 #registrationForm input {
     margin-left: 430px;
     width: 300px;
