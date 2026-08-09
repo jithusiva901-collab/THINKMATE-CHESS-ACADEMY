@@ -1,111 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THINKMATE CHESS ACADEMY ♕</title>
- <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
-<link rel="stylesheet" href="style.css">
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKMATE CHESS ACADEMY ♕</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="log img (1).png">
+    <link rel="stylesheet" href="hme.css">
+    <!-- Chessboard.js CSS and Dependencies -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+    
+    <!-- Chess Engine & Board Libraries (Required for playable chess) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+    <script src="auth-check.js"></script>
 </head>
 <body>
 
 <header>
-    <div class="logo">THINKMATE CHESS ACADEMY ♕</div>
-    <nav>
-      <a href="home.html">Home</a>
+    <a href="home.html" class="logo" style="text-decoration: none; color: inherit;">
+        THINKMATE CHESS ACADEMY ♕
+    </a>
+    
+    <div class="header-right">
+        <a href="messages.html" class="messages-icon-btn" title="Messages Inbox">
+            💬 <span class="unread-badge" id="unreadBadge">0</span>
+        </a>
+        <div class="menu-icon" id="menuToggle">&#9776;</div>
+        <nav id="navMenu">
+             <a href="home.html">Home</a>
         <a href="about.html">About</a>
         <a href="cources.html">Courses</a>
         <a href="register.html">Register</a>
         <a href="contact.html">Contact</a>
-        
-    </nav>
+        <a href="review.html">reviews</a>
+        <a href="#" id="logoutBtn">Logout</a>
+        </nav>
+    </div>
 </header>
 
 <section id="home" class="hero">
     <div class="hero-content">
-        <h1>Every Grandmaster Was Once a Beginner.
-Unlock your child’s potential with expert chess coaching that builds strategic thinking, confidence, concentration, and discipline.</h1>
-        <p>Professional Chess Coaching For All Levels</p>
-        <a href="register.html" class="btn">Join Academy</a>
-    </div> 
-</section>
+        <p>Every Grandmaster Was Once a Beginner. Unlock your child’s potential with expert chess coaching that builds strategic thinking, concentration, and discipline.</p>
+        
+        
+            <a href="register.html" class="btn">Join Academy</a>
+            <!-- FREE TRIAL BUTTON (Add right after Join Academy button) -->
+<button id="trialBtn" class="btn" style="background-color: rgb(165, 144, 92); color: #f7f3f3; border: none; cursor: pointer; margin-left: 10px;margin-top: 30px; margin-left: 5px;"> Play Free Trial</button>
 
- <section id="about" class="about">
-    <h2>About Our Academy</h2>
-    <p>
-        We provide world-class chess training for beginners,
-        intermediate, and advanced players. Our expert coaches
-        help students develop strategic thinking and tournament skills.
-    </p> 
-</section>
+<!-- CHESS FREE TRIAL MODAL -->
+<div id="chessModal" class="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center;">
+    <div style="background:rgb(165, 144, 92); padding: 20px; border-radius: 12px; width: 90%; max-width: 450px; text-align: center; color: #fff; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <button id="closeChessModal" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer;">&times;</button>
+        <h2 style="color: #f9f8f5; margin-bottom: 5px; font-size: 20px;">Human vs Computer Trial ♕</h2>
+        <p id="gameStatus" style="font-size: 13px; color: #ccc; margin-bottom: 12px;">Your Turn (White)</p>
+        
+        <!-- Interactive Chess Board -->
+        <div id="board" style="width: 100%; max-width: 380px; margin: 0 auto; border-radius: 6px; overflow: hidden;"></div>
 
-<section id="courses" class="courses">
-    <h2>Our Programs</h2>
-
-    <div class="course-grid">
-
-        <div class="card">
-            <h3>Beginner Course</h3>
-            <p>Learn rules, openings and tactics.</p>
-            <h4>₹2999</h4>
+        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <button id="resetBoardBtn" class="btn" style="background: rgb(165, 144, 92);color: #fff; border: none; padding: 8px 14px; border-radius: 5px; cursor: pointer; font-size: 13px; margin-top: 60px;">Restart Game</button>
+            <a href="register.html" class="btn" style="background: rgb(165, 144, 92); color: #ede8e8; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 13px; margin-top: 60px;">Register Now</a>
         </div>
+    </div>
+</div>
 
-        <div class="card">
-            <h3>Intermediate Course</h3>
-            <p>Advanced tactics and strategies.</p>
-            <h4>₹4999</h4>
+<!-- Load jQuery, Chess.js, and Chessboard.js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+
         </div>
-
-        <div class="card">
-            <h3>Advanced Course</h3>
-            <p>Tournament preparation and mastery.</p>
-            <h4>₹7999</h4>
-        </div>
-
     </div>
 </section>
 
- <section id="register" class="register">
-    <h2>Register Now</h2>
-
-    <form id="registrationForm">
-
-        <input type="text" id="name" placeholder="Student Name" required>
-
-        <input type="email" id="email" placeholder="Email Address" required>
-
-        <input type="tel" id="phone" placeholder="Mobile Number" required>
-
-        <select id="course">
-            <option value="2999">Beginner Course - ₹2999</option>
-            <option value="4999">Intermediate Course - ₹4999</option>
-            <option value="7999">Advanced Course - ₹7999</option>
-        </select>
-
-        <button type="button" onclick="payNow()">
-            Register & Pay
-        </button>
-
-    </form>
-</section>
-
-<section id="contact" class="contact">
-    <h2>Contact Us</h2>
-
-    <p>📞 +91 9486707315</p>
-    <p>📧 reenasuresh@gmail.com</p>
-    <p>📍 kasalada, India</p>
-</section>
-
-<footer>
-    <p>© 2026 THINKMATE CHESS ACADEMY. All Rights Reserved.</p>
-</footer>
-
-<script src="script.js"></script>
 
 
-
-
+<script src="chat-widget.js"></script>
+<script src="home.js"></script>
 </body>
 </html>
