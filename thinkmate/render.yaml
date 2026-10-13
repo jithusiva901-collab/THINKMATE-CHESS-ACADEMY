@@ -1,0 +1,31 @@
+# Review the recurring cost before creating this service.
+# This file describes a paid 0.5 CPU / 512 MB service and a 1 GB disk.
+services:
+  - type: web
+    name: thinkmate-chess-academy
+    runtime: node
+    plan: 0.5c-512mb
+    region: singapore
+    buildCommand: node --check server.js
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    numInstances: 1
+    disk:
+      name: academy-records
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: THINKMATE_SECURE_COOKIE
+        value: "true"
+      - key: THINKMATE_DATA_DIR
+        value: /var/data
+      - key: THINKMATE_ADMIN_EMAIL
+        value: admin@thinkmate.academy
+      - key: THINKMATE_ADMIN_PASSWORD
+        generateValue: true
