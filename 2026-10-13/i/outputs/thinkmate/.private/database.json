@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "b5765662-448d-4347-abcf-a7bd27b65649",
+      "name": "Academy admin",
+      "email": "admin@thinkmate.academy",
+      "role": "admin",
+      "passwordHash": "5f8efad749d04b9f7f15ffbf33ad103c:a6f2adc5b1f6c19910ed43bf64be7b4731b8556bedb079b8a616a8274d604f25956f88bf227e5ebef483d8bd412b1747d4177f833bf8f15d277cb30769a8548e",
+      "progress": {
+        "completed": [],
+        "enrolled": [],
+        "solved": false
+      }
+    }
+  ],
+  "students": [],
+  "classes": [],
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Welcome to ThinkMate",
+      "body": "Think smart. Play smart. Your next great move starts here.",
+      "date": "Academy update"
+    }
+  ]
+}

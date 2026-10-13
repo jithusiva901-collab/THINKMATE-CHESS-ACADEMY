@@ -1,0 +1,6 @@
+ThinkMate initial administrator account
+Login: http://127.0.0.1:4173/admin/login
+Email: admin@thinkmate.academy
+Password: oVNP4lUseta8LqOQ9F4KD8A_
+
+Keep this file private. Change the password after signing in.
