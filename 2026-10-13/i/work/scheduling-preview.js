@@ -1,0 +1,6 @@
+const fs=require('node:fs');const path=require('node:path');const crypto=require('node:crypto');
+const dir=path.join(__dirname,'scheduling-ui-check');fs.mkdirSync(dir,{recursive:true});
+const hash=()=>{const salt=crypto.randomBytes(16).toString('hex');return salt+':'+crypto.scryptSync('Schedule-Preview-2026',salt,64).toString('hex')};
+const progress=()=>({completed:[],enrolled:[],solved:false});
+fs.writeFileSync(path.join(dir,'database.json'),JSON.stringify({users:[{id:'admin',name:'Preview admin',email:'admin@preview.example',role:'admin',passwordHash:hash(),progress:progress()},{id:'one',studentId:1,name:'Test Student One',email:'one@preview.example',role:'student',passwordHash:hash(),progress:progress()},{id:'two',studentId:2,name:'Test Student Two',email:'two@preview.example',role:'student',passwordHash:hash(),progress:progress()}],students:[{id:1,name:'Test Student One',email:'one@preview.example',level:'Beginner',paid:false},{id:2,name:'Test Student Two',email:'two@preview.example',level:'Beginner',paid:false}],classes:[{id:1,title:'Individual opening lesson',level:'Beginner',date:'2026-10-20',day:'20',month:'OCT',time:'17:00',coach:'Test coach',studentIds:[1]}],announcements:[]}));
+process.env.THINKMATE_DATA_DIR=dir;process.env.PORT='4176';process.env.HOST='127.0.0.2';require('../outputs/thinkmate/server.js');

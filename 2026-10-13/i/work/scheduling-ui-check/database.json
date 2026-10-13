@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "name": "Preview admin",
+      "email": "admin@preview.example",
+      "role": "admin",
+      "passwordHash": "a828c2c0b4f266274393a64d86b83567:5338f7c69c65a5302d59a595884ffdd4b0a4cc8158c4f8caf98c5265e2d6ea6cf50514e87d6f07dd9f82cc8b41b713656b3471e59e771a66b86aa13064b75ad7",
+      "progress": {
+        "completed": [],
+        "enrolled": [],
+        "solved": false
+      }
+    },
+    {
+      "id": "one",
+      "studentId": 1,
+      "name": "Test Student One",
+      "email": "one@preview.example",
+      "role": "student",
+      "passwordHash": "475c543e7c880bf302e34473da4190a6:891eef24c7a2645094a678df423e239ebc4051f84dfcb87de8d78e7e3cd6eec75467eab9cb673cba7fa0e5337171d0c4c04584e2a42d745f862346837baa134a",
+      "progress": {
+        "completed": [],
+        "enrolled": [],
+        "solved": false
+      }
+    },
+    {
+      "id": "two",
+      "studentId": 2,
+      "name": "Test Student Two",
+      "email": "two@preview.example",
+      "role": "student",
+      "passwordHash": "acdebb8e5c7339b83d592b9809978f50:943a8ca337da29e26406f15e308aa46f979bac91dd7558c798e70d357f7bf7ee5a9745ec0b58b2a3182685f14e737a583124197093c2f5a07e7d3b5574f855c2",
+      "progress": {
+        "completed": [],
+        "enrolled": [],
+        "solved": false
+      }
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Test Student One",
+      "email": "one@preview.example",
+      "level": "Beginner",
+      "paid": false
+    },
+    {
+      "id": 2,
+      "name": "Test Student Two",
+      "email": "two@preview.example",
+      "level": "Beginner",
+      "paid": false
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "title": "Individual opening lesson",
+      "level": "Beginner",
+      "day": "20",
+      "month": "OCT",
+      "time": "18:30",
+      "coach": "Test coach",
+      "date": "2026-10-20",
+      "studentIds": [
+        1
+      ]
+    }
+  ],
+  "announcements": []
+}

@@ -1,0 +1,37 @@
+name: thinkmate
+services:
+  academy:
+    build: .
+    restart: unless-stopped
+    environment:
+      THINKMATE_ORIGIN: https://${SITE_DOMAIN:?Set SITE_DOMAIN to your real domain}
+      THINKMATE_ADMIN_EMAIL: ${THINKMATE_ADMIN_EMAIL:-admin@thinkmate.academy}
+      THINKMATE_ADMIN_PASSWORD: ${THINKMATE_ADMIN_PASSWORD:-}
+    volumes:
+      - academy_data:/data
+    expose:
+      - "4173"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+  https:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:?Set SITE_DOMAIN to your real domain}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      academy:
+        condition: service_healthy
+volumes:
+  academy_data:
+  caddy_data:
+  caddy_config:
